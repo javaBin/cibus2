@@ -13,6 +13,7 @@
   <name>Cibus 2</name>
 
   <repositories>
+      <!--
     <repository>
       <id>javabin-release</id>
       <name>javaBin Release Repository</name>
@@ -55,25 +56,29 @@
         <enabled>false</enabled>
       </snapshots>
     </repository>
+      -->
   </repositories>
 
   <dependencies>
+      <!--
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-test</artifactId>
       <version>${spring-version}</version>
       <scope>test</scope>
     </dependency>
+    -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.4</version>
+      <version>4.7</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
 
   <dependencyManagement>
     <dependencies>
+        <!--
       <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-beans</artifactId>
@@ -115,16 +120,19 @@
           </exclusion>
         </exclusions>
       </dependency>
+      -->
     </dependencies>
   </dependencyManagement>
 
   <properties>
+      <!--
     <spring-version>2.5.6.SEC01</spring-version>
     <jersey-version>1.1.5</jersey-version>
     <constretto-version>1.0</constretto-version>
     <encoding>UTF-8</encoding>
     <project.build.sourceEncoding>${encoding}</project.build.sourceEncoding>
     <maven.compiler.encoding>${encoding}</maven.compiler.encoding>
+    -->
     <version.jetty>6.1.23</version.jetty>
   </properties>
 
