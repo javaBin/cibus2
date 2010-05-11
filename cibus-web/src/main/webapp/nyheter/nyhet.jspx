@@ -1,86 +1,100 @@
-<html>
-<body>
-<h1>Call for Papers - Open for JavaZone 2010</h1>
+<?xml version="1.0" encoding="utf-8" ?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:decorator="http://www.opensymphony.com/sitemesh/decorator"
+      xmlns:page="http://www.opensymphony.com/sitemesh/page"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
 
-<div id="body">
-    <p><strong>*** The CFP is extended to April 9th ***</strong></p>
+      xmlns:parts="urn:jsptagdir:/WEB-INF/tags"
+      xmlns:jsp="http://java.sun.com/JSP/Page">
+      <!-- xmlns:portal="http://tags.java.no/portal" -->
+    <jsp:directive.page pageEncoding="utf-8" contentType="text/html;charset=utf-8"/>
+    <!--
+    <jsp:useBean id="frontJspBean" type="no.java.portal.page.FrontJspBean" scope="application"/>
+    <portal:getNewsItem articleId='${requestScope["articleId"]}' var="article"/>
+    -->
 
-    <p>We would like to inform you that the call for papers for JavaZone 2010 will open January 22nd.</p>
+    <body>
+        <div id="frontPage_news">
+            <div class="wrapper">
+                <div class="leftarea">
+                    <h2>${article.title} Call for Papers - Open for JavaZone 2010</h2>
 
-    <p>To take place in Oslo, Norway, on September 8th-9th 2010, the conference will offer a combination of technical
-        talks and panels in an informal atmosphere with an expected attendence of 2000. JavaZone 2010 will be the ninth
-        consecutive JavaZone conference.</p>
 
-    <p>As previous years, last year's conference was a massive success, with software professionals and partners
-        enjoying more than 100 sessions covering multiple topics, and an impressive lineup of internationally known
-        speakers. Leading evangelists in the community rate JavaZone as one of most important Java events in Europe.</p>
+                    <p class="author">
+                        <!-- ${portal:toLongString(article.metadata.created)}<br/> -->
+                        Skrevet av <a>${article.author}</a> <br/>
+                    </p>
 
-    <p>The JavaZone conference is organized by javaBin, the Norwegian Java User Group (JUG). javaBin is an idealistic,
-        non-profit organization established in 1996 by a group of Java enthusiasts. The JUG has since evolved to be the
-        leading group for the promotion of Java in Scandinavia.</p>
+                    <div class="newsbody">
+                        <p>${article.ingress}</p>
+                        <p>${article.text}</p>
 
-    <h2>Topics</h2>
+                        <!-- NOE TEKST -->
 
-    <p>This year we are requesting abstracts on the following topics:</p>
-    <ul>
-        <li>Alternative languages</li>
-        <li>Concurrency / scalability</li>
-        <li>Enterprise</li>
-        <li>Core / JVM</li>
-        <li>Web / frontend</li>
-        <li>Tooling</li>
-        <li>Methodology</li>
-        <li>Testing / Craftsmanship</li>
-        <li>Experience report</li>
-    </ul>
-    <br/>
 
-    <p>The abstracts should be tagged with the appropriate topics from the above list.</p>
+                        <p>
+                            <strong>*** The CFP is extended to April 9th ***</strong>
+                        </p>
 
-    <h2>Format and duration</h2>
+                        <p>We would like to inform you that the call for papers for JavaZone 2010 will open January
+                            22nd.
+                        </p>
 
-    <p>The presentations may be given in two formats, either a 60 minutes presentation, or a 10 minutes lightning
-        talk.</p>
+                        <p>To take place in Oslo, Norway, on September 8th-9th 2010, the conference will offer a
+                            combination of technical
+                            talks and panels in an informal atmosphere with an expected attendence of 2000. JavaZone
+                            2010 will be the ninth
+                            consecutive JavaZone conference.
+                        </p>
 
-    <h2>Where to submit</h2>
+                        <p>As previous years, last year's conference was a massive success, with software professionals
+                            and partners
+                            enjoying more than 100 sessions covering multiple topics, and an impressive lineup of
+                            internationally known
+                            speakers. Leading evangelists in the community rate JavaZone as one of most important Java
+                            events in Europe.
+                        </p>
 
-    <p>Abstracts may be submitted at the following address: <a href="http://www.java.no/submitit">http://www.java.no/submitit</a>
-    </p>
+                        <p>The JavaZone conference is organized by javaBin, the Norwegian Java User Group (JUG). javaBin
+                            is an idealistic,
+                            non-profit organization established in 1996 by a group of Java enthusiasts. The JUG has
+                            since evolved to be the
+                            leading group for the promotion of Java in Scandinavia.
+                        </p>
 
-    <h2>Dates</h2>
+                        <h2>Topics</h2>
 
-    <p>Call for Paper opens February 1st and closes March 21st 2010.</p>
+                        <p>This year we are requesting abstracts on the following topics:</p>
 
-    <h2>Journey of the Norwegian mountain wilds</h2>
+                        <!-- NOE TEKST SLUTT -->
 
-    <p>This year we will arrange a journey for speakers to explore norwegian nature.</p>
-
-    <p>The Journey of the Norwegian Wilds is the very first collective post-activity in the JavaZone history. Every year
-        we know of a few speakers both from Norway and abroad meet to enjoy Norway's wild nature after the conference.
-        This year we would like to invite all speakers and members of the JavaZone Committee to explore the wild nature,
-        enjoy the very best of Norwegian food and have a great time together in the weekend following the
-        conference.</p>
-
-    <p>More information and registration information can be found on the <a href="journey.html">journey page</a>.</p>
-
-    <h2>Monetary Policy</h2>
-
-    <p>The organiser of JavaZone is javaBin (the Norwegian Java User Group), an independent, non-profit organization.
-        The conference has partners but no sponsors. The agenda is defined by the Program Committee without external
-        interference. This independence is among the things that make JavaZone unique. We therefore have a limited
-        budget for reimbursing conference speakers. Please see <a href="moneypolicy.html">here</a> for more information.
-    </p>
-
-    <h2>Contact information</h2>
-
-    <p>Please do not hesitate to contact us at <a href="mailto:program@java.no">program@java.no</a> should you need any
-        further information.</p>
-
-    <p>Hope to see you there, and feel free to spread the word about JavaZone 2010 in your local community.</p>
-
-    <p>Best Regards,</p>
-
-    <p>The JavaZone Program Committee</p>
-</div>
-</body>
+                        <div class="furtherreading">
+                            <c:if test="${article.source != null}">
+                                <a href="${article.seeAlso}" title="Vis kilde" class="lesmer standalone"
+                                   target="_blank">
+                                    <c:choose>
+                                        <c:when test="${empty article.source}">Kilde</c:when>
+                                        <c:otherwise>${article.source}</c:otherwise>
+                                    </c:choose>
+                                </a>
+                            </c:if>
+                            <c:forEach var="url" items="${article.otherUrls}">
+                                <a href="${url}" class="lesmer standalone" target="_blank">${url}</a>
+                            </c:forEach>
+                            <a title="Diskuter" href="http://java.no/forum/forums/list.page" class="lesmer standalone">
+                                Diskuter på forumet
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!--
+                <div class="announcements">
+                    <parts:tipsLenke/>
+                    <parts:sokeFelt/>
+                    <parts:goldPartnerList/>
+                </div>
+                -->
+            </div>
+        </div>
+    </body>
 </html>
