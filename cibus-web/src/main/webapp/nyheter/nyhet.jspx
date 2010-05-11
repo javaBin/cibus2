@@ -67,7 +67,7 @@
                         <p>This year we are requesting abstracts on the following topics:</p>
 
                         <!-- NOE TEKST SLUTT -->
-
+                        <!--
                         <div class="furtherreading">
                             <c:if test="${article.source != null}">
                                 <a href="${article.seeAlso}" title="Vis kilde" class="lesmer standalone"
@@ -81,9 +81,11 @@
                             <c:forEach var="url" items="${article.otherUrls}">
                                 <a href="${url}" class="lesmer standalone" target="_blank">${url}</a>
                             </c:forEach>
+                            
                             <a title="Diskuter" href="http://java.no/forum/forums/list.page" class="lesmer standalone">
                                 Diskuter på forumet
                             </a>
+                            -->
                         </div>
                     </div>
                 </div>
@@ -94,7 +96,6 @@
                     <parts:goldPartnerList/>
                 </div>
                 -->
-            </div>
         </div>
     </body>
 </html>
