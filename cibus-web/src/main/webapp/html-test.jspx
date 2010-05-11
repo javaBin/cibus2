@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cms="http://taglib.java.no/incogito" lang="en"
+      xmlns:jsp="http://java.sun.com/JSP/Page"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+<jsp:directive.page pageEncoding="utf-8" contentType="text/html;charset=utf-8"/>
+<body>
+<cms:getHtml var="news" url="http://localhost:8100/cibus-cms-web/javazone/y2010/news/ticket-sale.html"/>
+
+<h1>Summary</h1>
+<cms:queryHtml document="${news}" expression="/html/body/div[@id='summary']"/>
+
+<h1>Body</h1>
+<cms:queryHtml document="${news}" expression="/html/body/div[@id='body']"/>
+</body>
+</html>

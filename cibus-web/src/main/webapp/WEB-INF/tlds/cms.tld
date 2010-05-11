@@ -24,11 +24,39 @@
       <required>true</required>
     </attribute>
   </tag>
-  <!--
-  <function>
-    <name>getAtom</name>
-    <function-class>no.java.cms.web.servlet.CmsFunctions</function-class>
-    <function-signature>AtomDocument get(java.lang.String)</function-signature>
-  </function>
-  -->
+  <tag>
+    <name>getHtml</name>
+    <tag-class>no.java.cms.tags.cms.GetHtml</tag-class>
+    <body-content>empty</body-content>
+    <variable>
+      <name-from-attribute>var</name-from-attribute>
+      <variable-class>no.java.cms.tags.cms.HtmlDocument</variable-class>
+      <scope>AT_END</scope>
+    </variable>
+    <attribute>
+      <name>url</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>var</name>
+      <required>true</required>
+    </attribute>
+  </tag>
+  <tag>
+    <name>queryHtml</name>
+    <tag-class>no.java.cms.tags.cms.QueryHtml</tag-class>
+    <body-content>empty</body-content>
+    <attribute>
+      <name>document</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+      <type>no.java.cms.tags.cms.HtmlDocument</type>
+    </attribute>
+    <attribute>
+      <name>expression</name>
+      <required>true</required>
+      <type>java.lang.String</type>
+    </attribute>
+  </tag>
 </taglib>
