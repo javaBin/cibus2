@@ -26,6 +26,8 @@ public class GetAtom extends SimpleTagSupport {
         System.out.println("url = " + url);
         List<AtomEntry> entries = new ArrayList<AtomEntry>();
         entries.add(new AtomEntry(new Date(), null, "Trygve er kul", "Ja, det stemmer!"));
+        entries.add(new AtomEntry(new Date(), null, "Klokken er", "ti over åtte"));
+        entries.add(new AtomEntry(new Date(), null, "De vil krige for å få tilbake lekeplassene til barna", "Mødre og unge på Grønland i Oslo er lei av narkosalg og vold i nabolaget"));
         AtomDocument document = new AtomDocument(entries);
         getJspContext().setAttribute(var, document);
     }

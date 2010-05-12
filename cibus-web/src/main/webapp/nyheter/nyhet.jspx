@@ -29,20 +29,6 @@
 
 
                         <div class="furtherreading">
-                            <!--
-                            <c:if test="${article.source != null}">
-                                <a href="${article.seeAlso}" title="Vis kilde" class="lesmer standalone"
-                                   target="_blank">
-                                    <c:choose>
-                                        <c:when test="${empty article.source}">Kilde</c:when>
-                                        <c:otherwise>${article.source}</c:otherwise>
-                                    </c:choose>
-                                </a>
-                            </c:if>
-                            <c:forEach var="url" items="${article.otherUrls}">
-                                <a href="${url}" class="lesmer standalone" target="_blank">${url}</a>
-                            </c:forEach>
-                            -->
                             <a title="Diskuter" href="http://java.no/forum/forums/list.page" class="lesmer standalone">
                                 Diskuter på forumet
                             </a>
@@ -51,14 +37,14 @@
                 </div>
 
                 <div class="announcements">
-                    Announcements
-                    <!--
-                    <parts:tipsLenke/>
-                    <parts:sokeFelt/>
-                    <parts:goldPartnerList/>
-                    -->
-                </div>
+                    <h3>Andre nyheter</h3>
+                    <cms:getAtom var="newslist" url="http://localhost:8100/cibus-cms-web/javazone/y2010/news/index.atom.xml"/>
+                    <c:forEach items="${newslist.entries}" var="entry">
+                        <h1>${entry.title}</h1>
 
+                        <p>${entry.summary}</p>
+                    </c:forEach>
+                </div>
             </div>
         </div>
     </body>
