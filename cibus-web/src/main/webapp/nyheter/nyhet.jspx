@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:decorator="http://www.opensymphony.com/sitemesh/decorator"
-      xmlns:page="http://www.opensymphony.com/sitemesh/page"
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:jsp="http://java.sun.com/JSP/Page"
       xmlns:c="http://java.sun.com/jsp/jstl/core"
-
-      xmlns:parts="urn:jsptagdir:/WEB-INF/tags"
-      xmlns:jsp="http://java.sun.com/JSP/Page">
-      <!-- xmlns:portal="http://tags.java.no/portal" -->
+      xmlns:cms="http://taglib.java.no/incogito">
     <jsp:directive.page pageEncoding="utf-8" contentType="text/html;charset=utf-8"/>
     <!--
     <jsp:useBean id="frontJspBean" type="no.java.portal.page.FrontJspBean" scope="application"/>
@@ -14,61 +10,26 @@
     -->
 
     <body>
+        <cms:getHtml var="news" url="http://localhost:8100/cibus-cms-web/javazone/y2010/news/ticket-sale.html"/>
+        
         <div id="frontPage_news">
             <div class="wrapper">
                 <div class="leftarea">
-                    <h2>${article.title} Call for Papers - Open for JavaZone 2010</h2>
+                    <h2><cms:queryHtml document="${news}" expression="/html/body/div[@id='title']"/></h2>
 
 
                     <p class="author">
                         <!-- ${portal:toLongString(article.metadata.created)}<br/> -->
-                        Skrevet av <a>${article.author}</a> <br/>
+                        Skrevet av <a><cms:queryHtml document="${news}" expression="/html/body/div[@id='author']"/></a> <br/>
                     </p>
 
                     <div class="newsbody">
-                        <p>${article.ingress}</p>
-                        <p>${article.text}</p>
-
-                        <!-- NOE TEKST -->
+                        <p><cms:queryHtml document="${news}" expression="/html/body/div[@id='summary']"/></p>
+                        <p><cms:queryHtml document="${news}" expression="/html/body/div[@id='body']"/></p>
 
 
-                        <p>
-                            <strong>*** The CFP is extended to April 9th ***</strong>
-                        </p>
-
-                        <p>We would like to inform you that the call for papers for JavaZone 2010 will open January
-                            22nd.
-                        </p>
-
-                        <p>To take place in Oslo, Norway, on September 8th-9th 2010, the conference will offer a
-                            combination of technical
-                            talks and panels in an informal atmosphere with an expected attendence of 2000. JavaZone
-                            2010 will be the ninth
-                            consecutive JavaZone conference.
-                        </p>
-
-                        <p>As previous years, last year's conference was a massive success, with software professionals
-                            and partners
-                            enjoying more than 100 sessions covering multiple topics, and an impressive lineup of
-                            internationally known
-                            speakers. Leading evangelists in the community rate JavaZone as one of most important Java
-                            events in Europe.
-                        </p>
-
-                        <p>The JavaZone conference is organized by javaBin, the Norwegian Java User Group (JUG). javaBin
-                            is an idealistic,
-                            non-profit organization established in 1996 by a group of Java enthusiasts. The JUG has
-                            since evolved to be the
-                            leading group for the promotion of Java in Scandinavia.
-                        </p>
-
-                        <h2>Topics</h2>
-
-                        <p>This year we are requesting abstracts on the following topics:</p>
-
-                        <!-- NOE TEKST SLUTT -->
-                        <!--
                         <div class="furtherreading">
+                            <!--
                             <c:if test="${article.source != null}">
                                 <a href="${article.seeAlso}" title="Vis kilde" class="lesmer standalone"
                                    target="_blank">
@@ -81,21 +42,24 @@
                             <c:forEach var="url" items="${article.otherUrls}">
                                 <a href="${url}" class="lesmer standalone" target="_blank">${url}</a>
                             </c:forEach>
-                            
+                            -->
                             <a title="Diskuter" href="http://java.no/forum/forums/list.page" class="lesmer standalone">
                                 Diskuter på forumet
                             </a>
-                            -->
                         </div>
                     </div>
                 </div>
-                <!--
+
                 <div class="announcements">
+                    Announcements
+                    <!--
                     <parts:tipsLenke/>
                     <parts:sokeFelt/>
                     <parts:goldPartnerList/>
+                    -->
                 </div>
-                -->
+
+            </div>
         </div>
     </body>
 </html>
