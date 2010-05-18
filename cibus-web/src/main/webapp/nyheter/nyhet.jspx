@@ -4,48 +4,134 @@
       xmlns:c="http://java.sun.com/jsp/jstl/core"
       xmlns:cms="http://taglib.java.no/incogito">
     <jsp:directive.page pageEncoding="utf-8" contentType="text/html;charset=utf-8"/>
-    <!--
-    <jsp:useBean id="frontJspBean" type="no.java.portal.page.FrontJspBean" scope="application"/>
-    <portal:getNewsItem articleId='${requestScope["articleId"]}' var="article"/>
-    -->
 
+
+    <cms:getHtml var="news" url="http://localhost:8100/cibus-cms-web/javazone/y2010/news/ticket-sale.html"/>
+
+    <head>
+        <title>JavaZone 2010</title>
+        <link rel="stylesheet" href="../css/javazone_2010.css" media="all"/>
+        <link rel="stylesheet" href="lib/jquery/jquery.twitter.css" media="all"/>
+        <link rel="stylesheet" href="lib/jquery/jquery.lightbox-0.5.css" media="all"/>
+    </head>
     <body>
-        <cms:getHtml var="news" url="http://localhost:8100/cibus-cms-web/javazone/y2010/news/ticket-sale.html"/>
-        
-        <div id="frontPage_news">
-            <div class="wrapper">
-                <div class="leftarea">
-                    <h2><cms:queryHtml document="${news}" expression="/html/body/div[@id='title']"/></h2>
+        <div id="header" class="center">
+            <a title="Javazone - Forsiden" href="index.html">
+                <img src="images/logo.png" alt="Javazone 2010" title="Javazone - Forsiden"/>
+            </a>
+            <div class="searchfield">
+                <form action="" method="" name="search">
+                    <input type="text" name="searchword" id="searchword"/>
+                    <input type="submit" value="" id="submitsearch"/>
+                </form>
+            </div>
+        </div>
 
 
-                    <p class="author">
-                        <!-- ${portal:toLongString(article.metadata.created)}<br/> -->
-                        Skrevet av <a><cms:queryHtml document="${news}" expression="/html/body/div[@id='author']"/></a> <br/>
+        <div id="mainmenu">
+            <ul>
+                <li class="home">
+                    <a class="main-menu" href="index.html">Home</a>
+                </li>
+                <li class="registration">
+                    <a class="main-menu" href="http://shop.java.no">Registration</a>
+                </li>
+                <li class="program">
+                    <a class="main-menu" href="program.html">Program</a>
+                </li>
+                <li class="partners">
+                    <a class="main-menu" href="partners.html">Partners</a>
+                </li>
+                <li class="contact">
+                    <a class="main-menu" href="contact.html">Contact</a>
+                </li>
+                <li class="about">
+                    <a class="main-menu" href="about.html">About Javazone</a>
+                </li>
+            </ul>
+        </div>
+        <div id="greyfield">
+            <div id="greyfield_content">
+                <img src="images/newjavazone.png" style="float:left;margin:30px 0 0 0" alt="New Javazone"/>
+                <img src="images/foredragsholdere.png" style="float:left;" alt="Foredragsholdere"/>
+
+                <div id="submenu">
+                    <span>Next happenings</span>
+                    <hr/>
+                    <ul>
+                        <li>
+                            <a href="http://wiki.java.no/">17th of April: JZ10 Weekend Workshop</a>
+                        </li>
+                        <li>
+                            <a href="http://shop.java.no">24th of April: Early Bird tickets closes</a>
+                        </li>
+                        <li>
+                            <a href="partners.html">27th of April: Partner meeting</a>
+                        </li>
+                    </ul>
+                    <hr/>
+                </div>
+            </div>
+        </div>
+        <div id="content">
+            <div id="news">
+                <h1>
+                    <cms:queryHtml document="${news}" expression="/html/body/div[@id='title']"/>
+                </h1>
+                <hr/>
+                <div class="newsframe accent">
+
+                    <p>
+                        <cms:queryHtml document="${news}" expression="/html/body/div[@id='summary']"/>
+                    </p>
+                    <p>
+                        <cms:queryHtml document="${news}" expression="/html/body/div[@id='body']"/>
                     </p>
 
-                    <div class="newsbody">
-                        <p><cms:queryHtml document="${news}" expression="/html/body/div[@id='summary']"/></p>
-                        <p><cms:queryHtml document="${news}" expression="/html/body/div[@id='body']"/></p>
 
-
-                        <div class="furtherreading">
-                            <a title="Diskuter" href="http://java.no/forum/forums/list.page" class="lesmer standalone">
-                                Diskuter på forumet
-                            </a>
-                        </div>
-                    </div>
                 </div>
 
-                <div class="announcements">
-                    <h3>Andre nyheter</h3>
-                    <cms:getAtom var="newslist" url="http://localhost:8100/cibus-cms-web/javazone/y2010/news/index.atom.xml"/>
+            </div>
+
+            <div id="blog">
+                <h2>
+                    JavaBlog
+                    <span class="follow">
+                        <img src="style/gfx/folg_oss.png"/>
+                        <a
+                                href="http://www.facebook.com/group.php?gid=91662203099">
+                            <img src="style/gfx/facebook.png"
+                                 alt="Facebook"/>
+                        </a>
+                        <a
+                                href="http://twitter.com/javazone">
+                            <img src="style/gfx/twitter.png" alt="Twitter"/>
+                        </a>
+                    </span>
+                    <!-- Testing news listing -->
+                    <cms:getAtom var="newslist"
+                                 url="http://localhost:8100/cibus-cms-web/javazone/y2010/news/index.atom.xml"/>
                     <c:forEach items="${newslist.entries}" var="entry">
                         <h1>${entry.title}</h1>
 
                         <p>${entry.summary}</p>
                     </c:forEach>
+                </h2>
+
+                <div id="twitter">
+                    <p>
+                        <a href="http://twitter.com/javazone">http://twitter.com/javazone</a>
+                    </p>
                 </div>
             </div>
+        </div>
+        <div id="footer">
+            <p class="small">JavaZone.no - shipped in cooperation with<a href="http://www.bekk.no/" alt="bekk.no">
+                BEKK</a>.
+                Header photos by<a href="http://www.fotogal.no/" alt="fotogal.no">Andre Eide</a>. (All content Creative
+                Commons
+                BY-SA 2.0 Licensed)
+            </p>
         </div>
     </body>
 </html>
