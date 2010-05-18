@@ -23,6 +23,7 @@
             <a title="Javazone - Forsiden" href="index.html">
                 <img src="${pageContext.request.contextPath}/images/logo.png" alt="Javazone 2010" title="Javazone - Forsiden"/>
             </a>
+            <!-- Search field not in use -->
             <div class="searchfield">
                 <form action="" method="" name="search">
                     <input type="text" name="searchword" id="searchword"/>
@@ -85,13 +86,10 @@
                 JavaBlog
                 <span class="follow">
                     <img src="${pageContext.request.contextPath}/images/folg_oss.png" alt="Follow us"/>
-                    <a
-                            href="http://www.facebook.com/group.php?gid=91662203099">
-                        <img src="${pageContext.request.contextPath}/images/facebook.png"
-                             alt="Facebook"/>
+                    <a href="http://www.facebook.com/group.php?gid=91662203099">
+                        <img src="${pageContext.request.contextPath}/images/facebook.png" alt="Facebook"/>
                     </a>
-                    <a
-                            href="http://twitter.com/javazone">
+                    <a href="http://twitter.com/javazone">
                         <img src="${pageContext.request.contextPath}/images/twitter.png" alt="Twitter"/>
                     </a>
                 </span>
@@ -99,7 +97,6 @@
                 <cms:getAtom var="newslist" url="http://localhost:8100/cibus-cms-web/javazone/y2010/news/index.atom.xml"/>
                 <c:forEach items="${newslist.entries}" var="entry">
                     <h1>${entry.title}</h1>
-
                     <p>${entry.summary}</p>
                 </c:forEach>
             </h2>
