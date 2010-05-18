@@ -1,32 +1,121 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:decorator="http://www.opensymphony.com/sitemesh/decorator"
-      xmlns:page="http://www.opensymphony.com/sitemesh/page"
       xmlns:c="http://java.sun.com/jsp/jstl/core"
-      xmlns:portal="http://tags.java.no/portal"
       xmlns:jsp="http://java.sun.com/JSP/Page"
-      xmlns:parts="urn:jsptagdir:/WEB-INF/tags">
+      xmlns:cms="http://taglib.java.no/incogito">
 
-<jsp:output doctype-root-element="HTML"
-            doctype-system="http://www.w3.org/TR/html4/loose.dtd"
-            doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+    <jsp:output doctype-root-element="HTML"
+                doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+                doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
 
-<head>
-    <!-- <link type="application/rss+xml" href="${pageContext.request.contextPath}/show.do?page=68" title="java.no" rel="alternate"/> -->
-    <link type="text/css" href="${pageContext.request.contextPath}/css/javazone_2010.css" rel="stylesheet"/>
-    <title><decorator:title/></title>
-    <decorator:head/>
-</head>
-<body>
-    <!--
-<parts:header/>
+    <head>
+        <link type="text/css" href="${pageContext.request.contextPath}/css/javazone_2010.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/jquery/jquery.twitter.css" media="all"/>
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/jquery/jquery.lightbox-0.5.css" media="all"/>
+        <title>
+            <decorator:title/>
+        </title>
+        <decorator:head/>
+    </head>
+    <body>
+        <div id="header" class="center">
+            <a title="Javazone - Forsiden" href="index.html">
+                <img src="${pageContext.request.contextPath}/images/logo.png" alt="Javazone 2010" title="Javazone - Forsiden"/>
+            </a>
+            <div class="searchfield">
+                <form action="" method="" name="search">
+                    <input type="text" name="searchword" id="searchword"/>
+                    <input type="submit" value="" id="submitsearch"/>
+                </form>
+            </div>
+        </div>
 
-<parts:mainMenu current="nyheter"/>
-    -->
-<decorator:body/>
-    <!--
-<parts:footer/>
--->
 
-</body>
+        <div id="mainmenu">
+            <ul>
+                <li class="home">
+                    <a class="main-menu" href="${pageContext.request.contextPath}/index.html">Home</a>
+                </li>
+                <li class="registration">
+                    <a class="main-menu" href="http://shop.java.no">Registration</a>
+                </li>
+                <li class="program">
+                    <a class="main-menu" href="${pageContext.request.contextPath}/program.html">Program</a>
+                </li>
+                <li class="partners">
+                    <a class="main-menu" href="${pageContext.request.contextPath}/partners.html">Partners</a>
+                </li>
+                <li class="contact">
+                    <a class="main-menu" href="${pageContext.request.contextPath}/contact.html">Contact</a>
+                </li>
+                <li class="about">
+                    <a class="main-menu" href="${pageContext.request.contextPath}/about.html">About Javazone</a>
+                </li>
+            </ul>
+        </div>
+        <div id="greyfield">
+            <div id="greyfield_content">
+                <img src="${pageContext.request.contextPath}/images/newjavazone.png" style="float:left;margin:30px 0 0 0" alt="New Javazone"/>
+                <img src="${pageContext.request.contextPath}/images/foredragsholdere.png" style="float:left;" alt="Foredragsholdere"/>
+
+                <div id="submenu">
+                    <span>Next happenings</span>
+                    <hr/>
+                    <ul>
+                        <li>
+                            <a href="http://wiki.java.no/">17th of April: JZ10 Weekend Workshop</a>
+                        </li>
+                        <li>
+                            <a href="http://shop.java.no">24th of April: Early Bird tickets closes</a>
+                        </li>
+                        <li>
+                            <a href="partners.html">27th of April: Partner meeting</a>
+                        </li>
+                    </ul>
+                    <hr/>
+                </div>
+            </div>
+        </div>
+
+        <decorator:body/>
+
+        <div id="blog">
+            <h2>
+                JavaBlog
+                <span class="follow">
+                    <img src="${pageContext.request.contextPath}/images/folg_oss.png" alt="Follow us"/>
+                    <a
+                            href="http://www.facebook.com/group.php?gid=91662203099">
+                        <img src="${pageContext.request.contextPath}/images/facebook.png"
+                             alt="Facebook"/>
+                    </a>
+                    <a
+                            href="http://twitter.com/javazone">
+                        <img src="${pageContext.request.contextPath}/images/twitter.png" alt="Twitter"/>
+                    </a>
+                </span>
+                <!-- Testing news listing -->
+                <cms:getAtom var="newslist" url="http://localhost:8100/cibus-cms-web/javazone/y2010/news/index.atom.xml"/>
+                <c:forEach items="${newslist.entries}" var="entry">
+                    <h1>${entry.title}</h1>
+
+                    <p>${entry.summary}</p>
+                </c:forEach>
+            </h2>
+
+            <div id="twitter">
+                <p>
+                    <a href="http://twitter.com/javazone">http://twitter.com/javazone</a>
+                </p>
+            </div>
+        </div>
+
+
+        <div id="footer">
+            <p class="small">JavaZone.no - shipped in cooperation with<a href="http://www.bekk.no/"> BEKK</a>.
+                Header photos by<a href="http://www.fotogal.no/">Andre Eide</a>. (All content Creative Commons BY-SA 2.0 Licensed)
+            </p>
+        </div>
+    </body>
 </html>
