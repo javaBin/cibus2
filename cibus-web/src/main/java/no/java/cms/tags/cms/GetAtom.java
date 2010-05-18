@@ -1,9 +1,20 @@
 package no.java.cms.tags.cms;
 
-import javax.servlet.jsp.*;
-import javax.servlet.jsp.tagext.*;
-import java.io.*;
-import java.util.*;
+import java.io.IOException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import javax.servlet.jsp.JspException;
+import javax.servlet.jsp.tagext.SimpleTagSupport;
+
+import com.sun.syndication.feed.synd.SyndEntry;
+import com.sun.syndication.feed.synd.SyndEntryImpl;
+import com.sun.syndication.feed.synd.SyndFeed;
+import com.sun.syndication.io.FeedException;
+import com.sun.syndication.io.SyndFeedInput;
+import com.sun.syndication.io.XmlReader;
 
 public class GetAtom extends SimpleTagSupport {
     public String url;
@@ -21,13 +32,31 @@ public class GetAtom extends SimpleTagSupport {
     // Simple Tag Implementation
     // -----------------------------------------------------------------------
 
-    public void doTag() throws JspException, IOException {
-        System.out.println("GetAtom.doTag");
-        System.out.println("url = " + url);
-        List<AtomEntry> entries = new ArrayList<AtomEntry>();
-        entries.add(new AtomEntry(new Date(), null, "Trygve er kul", "Ja, det stemmer!"));
-        entries.add(new AtomEntry(new Date(), null, "Klokken er", "ti over åtte"));
-        entries.add(new AtomEntry(new Date(), null, "De vil krige for å få tilbake lekeplassene til barna", "Mødre og unge på Grønland i Oslo er lei av narkosalg og vold i nabolaget"));
+	public void doTag() throws JspException, IOException {
+		System.out.println("GetAtom.doTag");
+		System.out.println("url = " + url);
+
+		List<AtomEntry> entries = new ArrayList<AtomEntry>();
+		
+		SyndFeedInput input = new SyndFeedInput();
+		try {
+			SyndFeed feed = input.build(new XmlReader(new URL(url)));
+
+			for (Object element : feed.getEntries()) {
+				SyndEntry entry = (SyndEntryImpl) element;
+				entries.add(new AtomEntry(entry.getPublishedDate(), entry
+						.getUpdatedDate(), entry.getTitle(), entry
+						.getDescription().getValue()));
+
+			}
+		} catch (IllegalArgumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (FeedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}        
+
         AtomDocument document = new AtomDocument(entries);
         getJspContext().setAttribute(var, document);
     }
