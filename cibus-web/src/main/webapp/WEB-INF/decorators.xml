@@ -3,12 +3,14 @@
 <decorators defaultdir="/WEB-INF/decorators">
 
     <excludes>
-        <pattern>/styles/*</pattern>
+        <pattern>/css/*</pattern>
         <pattern>/scripts/*</pattern>
         <pattern>/images/*</pattern>
     </excludes>
 
     <decorator name="nyheter" page="nyheter.jspx">
-        <pattern>/nyheter/*</pattern>
+        <pattern>/nyhet.jspx</pattern>
+        <pattern>/program.jspx</pattern>
+        <pattern>/about.jspx</pattern>
     </decorator>
 </decorators>

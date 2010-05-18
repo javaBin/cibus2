@@ -14,7 +14,8 @@
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/jquery/jquery.twitter.css" media="all"/>
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/jquery/jquery.lightbox-0.5.css" media="all"/>
         <title>
-            <decorator:title/>
+            JavaZone 2010
+            <!-- <decorator:title/> -->
         </title>
         <decorator:head/>
     </head>
@@ -36,22 +37,22 @@
         <div id="mainmenu">
             <ul>
                 <li class="home">
-                    <a class="main-menu" href="${pageContext.request.contextPath}/index.html">Home</a>
+                    <a class="main-menu" href="${pageContext.request.contextPath}/index.jspx">Home</a>
                 </li>
                 <li class="registration">
                     <a class="main-menu" href="http://shop.java.no">Registration</a>
                 </li>
                 <li class="program">
-                    <a class="main-menu" href="${pageContext.request.contextPath}/program.html">Program</a>
+                    <a class="main-menu" href="${pageContext.request.contextPath}/program.jspx">Program</a>
                 </li>
                 <li class="partners">
-                    <a class="main-menu" href="${pageContext.request.contextPath}/partners.html">Partners</a>
+                    <a class="main-menu" href="${pageContext.request.contextPath}/partners.jspx">Partners</a>
                 </li>
                 <li class="contact">
-                    <a class="main-menu" href="${pageContext.request.contextPath}/contact.html">Contact</a>
+                    <a class="main-menu" href="${pageContext.request.contextPath}/contact.jspx">Contact</a>
                 </li>
                 <li class="about">
-                    <a class="main-menu" href="${pageContext.request.contextPath}/about.html">About Javazone</a>
+                    <a class="main-menu" href="${pageContext.request.contextPath}/about.jspx">About Javazone</a>
                 </li>
             </ul>
         </div>
@@ -65,13 +66,13 @@
                     <hr/>
                     <ul>
                         <li>
-                            <a href="http://wiki.java.no/">17th of April: JZ10 Weekend Workshop</a>
+                            <a href="http://wiki.java.no/">&#187; 17th of April: JZ10 Weekend Workshop</a>
                         </li>
                         <li>
-                            <a href="http://shop.java.no">24th of April: Early Bird tickets closes</a>
+                            <a href="http://shop.java.no">&#187; 24th of April: Early Bird tickets closes</a>
                         </li>
                         <li>
-                            <a href="partners.html">27th of April: Partner meeting</a>
+                            <a href="partners.html">&#187; 27th of April: Partner meeting</a>
                         </li>
                     </ul>
                     <hr/>
@@ -93,12 +94,6 @@
                         <img src="${pageContext.request.contextPath}/images/twitter.png" alt="Twitter"/>
                     </a>
                 </span>
-                <!-- Testing news listing -->
-                <cms:getAtom var="newslist" url="http://localhost:8100/cibus-cms-web/javazone/y2010/news/index.atom.xml"/>
-                <c:forEach items="${newslist.entries}" var="entry">
-                    <h1>${entry.title}</h1>
-                    <p>${entry.summary}</p>
-                </c:forEach>
             </h2>
 
             <div id="twitter">
@@ -111,7 +106,7 @@
 
         <div id="footer">
             <p class="small">JavaZone.no - shipped in cooperation with<a href="http://www.bekk.no/"> BEKK</a>.
-                Header photos by<a href="http://www.fotogal.no/">Andre Eide</a>. (All content Creative Commons BY-SA 2.0 Licensed)
+                Header photos by <a href="http://www.fotogal.no/">Andre Eide</a>. (All content Creative Commons BY-SA 2.0 Licensed)
             </p>
         </div>
     </body>
