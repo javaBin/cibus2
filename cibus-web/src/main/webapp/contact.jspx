@@ -4,7 +4,7 @@
       xmlns:c="http://java.sun.com/jsp/jstl/core"
       xmlns:cms="http://taglib.java.no/incogito">
     <jsp:directive.page pageEncoding="utf-8" contentType="text/html;charset=utf-8"/>
-    <cms:getHtml var="news" url="http://localhost:8100/cibus-cms-web/javazone/y2010/about.html"/>
+    <cms:getHtml var="news" url="http://localhost:8100/cibus-cms-web/javazone/y2010/contact.html"/>
     <body>
         <div id="content">
             <div id="news">

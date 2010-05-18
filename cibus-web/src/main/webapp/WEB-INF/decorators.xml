@@ -12,5 +12,6 @@
         <pattern>/nyhet.jspx</pattern>
         <pattern>/program.jspx</pattern>
         <pattern>/about.jspx</pattern>
+        <pattern>/contact.jspx</pattern>
     </decorator>
 </decorators>

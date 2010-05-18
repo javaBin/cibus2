@@ -8,9 +8,7 @@
     <body>
         <div id="content">
             <div id="news">
-                <h1>
-                    <cms:queryHtml document="${news}" expression="/html/body/div[@id='title']"/>
-                </h1>
+                    <cms:queryHtml document="${news}" expression="/html/body/h1"/>
                 <hr/>
                 <div class="newsframe accent">
                     <p>
