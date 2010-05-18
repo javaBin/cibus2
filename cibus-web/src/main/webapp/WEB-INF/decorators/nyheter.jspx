@@ -13,7 +13,7 @@
 
 <head>
     <!-- <link type="application/rss+xml" href="${pageContext.request.contextPath}/show.do?page=68" title="java.no" rel="alternate"/> -->
-    <link type="text/css" href="${pageContext.request.contextPath}/css/java_no_2010.css" rel="stylesheet"/>
+    <link type="text/css" href="${pageContext.request.contextPath}/css/stylesheet_2010.css" rel="stylesheet"/>
     <title><decorator:title/></title>
     <decorator:head/>
 </head>
