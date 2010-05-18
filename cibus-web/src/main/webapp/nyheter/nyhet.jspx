@@ -97,15 +97,15 @@
                 <h2>
                     JavaBlog
                     <span class="follow">
-                        <img src="style/gfx/folg_oss.png"/>
+                        <img src="images/folg_oss.png"/>
                         <a
                                 href="http://www.facebook.com/group.php?gid=91662203099">
-                            <img src="style/gfx/facebook.png"
+                            <img src="images/facebook.png"
                                  alt="Facebook"/>
                         </a>
                         <a
                                 href="http://twitter.com/javazone">
-                            <img src="style/gfx/twitter.png" alt="Twitter"/>
+                            <img src="images/twitter.png" alt="Twitter"/>
                         </a>
                     </span>
                     <!-- Testing news listing -->
