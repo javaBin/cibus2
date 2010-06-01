@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:jsp="http://java.sun.com/JSP/Page"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:cms="http://taglib.java.no/incogito">
+    <jsp:directive.page pageEncoding="utf-8" contentType="text/html;charset=utf-8"/>
+    <cms:getHtml var="news" url="http://localhost:8100/cibus-cms-web/javazone/y2010/${contentId}.html"/>
+    <body>
+        <div id="content">
+            <div id="news">
+                    <cms:queryHtml document="${news}" expression="/html/body/h1"/>
+                <hr/>
+                <div class="newsframe accent">
+                    <p>
+                        <cms:queryHtml document="${news}" expression="/html/body/div[@id='summary']"/>
+                    </p>
+                    <p>
+                        <cms:queryHtml document="${news}" expression="/html/body/div[@id='body']"/>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

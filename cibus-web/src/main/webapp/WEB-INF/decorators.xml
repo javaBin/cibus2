@@ -2,16 +2,21 @@
 
 <decorators defaultdir="/WEB-INF/decorators">
 
-    <excludes>
-        <pattern>/css/*</pattern>
-        <pattern>/scripts/*</pattern>
-        <pattern>/images/*</pattern>
-    </excludes>
+	<excludes>
+		<pattern>/css/*</pattern>
+		<pattern>/scripts/*</pattern>
+		<pattern>/images/*</pattern>
+	</excludes>
 
-    <decorator name="nyheter" page="nyheter.jspx">
-        <pattern>/nyhet.jspx</pattern>
-        <pattern>/program.jspx</pattern>
-        <pattern>/about.jspx</pattern>
-        <pattern>/contact.jspx</pattern>
-    </decorator>
+	<decorator name="nyheter" page="nyheter.jspx">
+		<pattern>/nyhet.jspx</pattern>
+		<pattern>/program.jspx</pattern>
+		<pattern>/about.jspx</pattern>
+		<pattern>/about2.jspx</pattern>
+		<pattern>/contact.jspx</pattern>
+	</decorator>
+
+	<decorator name="content" page="contentTemplate.jspx">
+		<pattern>/content.jspx</pattern>
+	</decorator>
 </decorators>
