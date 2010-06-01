@@ -43,16 +43,16 @@
                     <a class="main-menu" href="http://shop.java.no">Registration</a>
                 </li>
                 <li class="program">
-                    <a class="main-menu" href="${pageContext.request.contextPath}/program.jspx">Program</a>
+                    <a class="main-menu" href="${pageContext.request.contextPath}/program.html">Program</a>
                 </li>
                 <li class="partners">
-                    <a class="main-menu" href="${pageContext.request.contextPath}/partners.jspx">Partners</a>
+                    <a class="main-menu" href="${pageContext.request.contextPath}/partners.html">Partners</a>
                 </li>
                 <li class="contact">
-                    <a class="main-menu" href="${pageContext.request.contextPath}/contact.jspx">Contact</a>
+                    <a class="main-menu" href="${pageContext.request.contextPath}/contact.html">Contact</a>
                 </li>
                 <li class="about">
-                    <a class="main-menu" href="${pageContext.request.contextPath}/about.jspx">About Javazone</a>
+                    <a class="main-menu" href="${pageContext.request.contextPath}/about.html">About Javazone</a>
                 </li>
             </ul>
         </div>
