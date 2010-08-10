@@ -1,0 +1,29 @@
+h2. About Cibus2
+Cibus 2 is the replacement of the CMS for JavaZone.no
+
+h2. Modules 
+It consists of two different webapps.
+ * Cibus-CMS-Web
+Backend which works as a HTTP repository for .html based content.
+ * Cibus-Web
+Webpage which styles the .html files served by the CMS backend.
+
+h2. Setting up the environment
+ * Build the project from root with Maven
+ ** mvn clean install
+ * Start the cibus-cms-web in a new command line window
+ ** cd cibus-cms-web
+ ** mvn jetty:run
+ * Start the cibus-web frontend
+ ** cd cibus-web
+ ** mvn jetty:run
+
+h2. Testing
+The web pages can be located by:
+http://localhost:8099/cibus-web/about.html
+http://localhost:8099/cibus-web/contact.html
+And so on.
+
+h2. Note
+Note that behind the scenes, tuckey is used for URL rewrite, and sitemesh for layout.
+The pages are rendered with content.jspx which accepts the url's from the tuckey rewrite filter.
