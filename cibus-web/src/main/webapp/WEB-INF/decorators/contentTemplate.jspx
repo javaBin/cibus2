@@ -37,7 +37,7 @@
         <div id="mainmenu">
             <ul>
                 <li class="home">
-                    <a class="main-menu" href="${pageContext.request.contextPath}/index.jspx">Home</a>
+                    <a class="main-menu" href="${pageContext.request.contextPath}/index.html">Home</a>
                 </li>
                 <li class="registration">
                     <a class="main-menu" href="http://shop.java.no">Registration</a>
