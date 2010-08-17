@@ -20,5 +20,16 @@
 
     <p>${entry.summary}</p>
 </c:forEach>
+
+
+<h1>NEws from JZ2010</h1>
+<cms:getAtom var="jz2010" url="http://jz10.java.no/atom.xml"/>
+<c:forEach items="${jz2010.entries}" var="entry">
+    <h1>${entry.title}</h1>
+
+    <p>${entry.summary}</p>
+</c:forEach>
+
+
 </body>
 </html>

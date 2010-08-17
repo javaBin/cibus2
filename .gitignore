@@ -2,6 +2,7 @@
 .project
 .settings
 .svn
+.DS_Store
 *.idea
 *.iml
 *.ipr

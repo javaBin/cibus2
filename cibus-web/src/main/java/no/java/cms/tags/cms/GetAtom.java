@@ -9,6 +9,7 @@ import java.util.List;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 
+import com.sun.syndication.feed.synd.SyndContent;
 import com.sun.syndication.feed.synd.SyndEntry;
 import com.sun.syndication.feed.synd.SyndEntryImpl;
 import com.sun.syndication.feed.synd.SyndFeed;
@@ -44,10 +45,11 @@ public class GetAtom extends SimpleTagSupport {
 
 			for (Object element : feed.getEntries()) {
 				SyndEntry entry = (SyndEntryImpl) element;
-				entries.add(new AtomEntry(entry.getPublishedDate(), entry
-						.getUpdatedDate(), entry.getTitle(), entry
-						.getDescription().getValue()));
+                SyndContent desc = entry.getDescription();
+                String description = desc!=null?desc.getValue():"no description";
 
+				entries.add(new AtomEntry(entry.getPublishedDate(), entry
+						.getUpdatedDate(), entry.getTitle(), description));
 			}
 		} catch (IllegalArgumentException e) {
 			// TODO Auto-generated catch block

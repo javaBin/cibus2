@@ -30,3 +30,8 @@ h2. Note
 
 Note that behind the scenes, tuckey is used for URL rewrite, and sitemesh for layout.
 The pages are rendered with content.jspx which accepts the url's from the tuckey rewrite filter.
+
+
+h2. Posts / Internal news listinging
+
+Create rss feed of news on Cibus2-cms-web linked to html and use this on cibus-web.
