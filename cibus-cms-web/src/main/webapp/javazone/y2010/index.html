@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cms="http://taglib.java.no/incogito" lang="en"
+      xmlns:jsp="http://java.sun.com/JSP/Page"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+<jsp:directive.page pageEncoding="utf-8" contentType="text/html;charset=utf-8"/>
+
+<h1>News</h1>
+<hr/>
+	{% for post in site.posts %}
+	<div class="newsframe{% if forloop.first %} accent{% endif %}">
+	<span class="timestamp">{{ post.date | date_to_string }}</span>
+	<div class="expand_newsframe"><img src="style/gfx/contract_newsframe.png" alt="co" title="Contract" /></div>
+	<h2>{{post.title}}</h2>
+	{{ post.content }}		
+	</div>
+	{% endfor %}
+</div>
