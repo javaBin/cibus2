@@ -8,15 +8,8 @@
 		<pattern>/images/*</pattern>
 	</excludes>
 
-	<decorator name="nyheter" page="nyheter.jspx">
-		<pattern>/nyhet.jspx</pattern>
-		<pattern>/program.jspx</pattern>
-		<pattern>/about.jspx</pattern>
-		<pattern>/about2.jspx</pattern>
-		<pattern>/contact.jspx</pattern>
-	</decorator>
-
 	<decorator name="content" page="contentTemplate.jspx">
 		<pattern>/content.jspx</pattern>
+		<pattern>/index.jspx</pattern>
 	</decorator>
 </decorators>

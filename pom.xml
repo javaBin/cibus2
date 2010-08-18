@@ -1,12 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-    <!--
-  <parent>
-    <groupId>no.java.portal</groupId>
-    <artifactId>portal</artifactId>
-    <version>4</version>
-  </parent>
-  -->
 
   <groupId>no.java.cibus</groupId>
   <artifactId>cibus</artifactId>
@@ -15,58 +9,24 @@
   <name>Cibus 2</name>
 
   <repositories>
-<repository>
-    <id>JavaNet</id>
-    <url>http://download.java.net/maven/2/</url>
-</repository>
-      <!--
     <repository>
-      <id>javabin-release</id>
-      <name>javaBin Release Repository</name>
-      <url>http://smia.java.no/maven/repo/release</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
+      <id>JavaNet</id>
+      <url>http://download.java.net/maven/2/</url>
       <snapshots>
         <enabled>false</enabled>
       </snapshots>
     </repository>
     <repository>
-      <id>javabin-snapshot</id>
-      <name>javaBin Snapshot Repository</name>
-      <url>http://smia.java.no/maven/repo/snapshot</url>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
-    <repository>
-      <id>apache-snapshot</id>
-      <url>http://people.apache.org/repo/m2-snapshot-repository</url>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
-    <repository>
-      <id>fj-repository</id>
-      <url>http://functionaljava.googlecode.com/svn/maven</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
+      <id>zinin</id>
+      <url>http://zinin.ru/share/maven/</url>
       <snapshots>
         <enabled>false</enabled>
       </snapshots>
     </repository>
-      -->
   </repositories>
 
   <dependencies>
-      <!--
+    <!--
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-test</artifactId>
@@ -84,54 +44,11 @@
 
   <dependencyManagement>
     <dependencies>
-        <!--
-      <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-beans</artifactId>
-        <version>${spring-version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-context</artifactId>
-        <version>${spring-version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-context-support</artifactId>
-        <version>${spring-version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-core</artifactId>
-        <version>${spring-version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-aop</artifactId>
-        <version>${spring-version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-web</artifactId>
-        <version>${spring-version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.sun.jersey.contribs</groupId>
-        <artifactId>jersey-spring</artifactId>
-        <version>1.0</version>
-        <exclusions>
-          <exclusion>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring</artifactId>
-          </exclusion>
-        </exclusions>
-      </dependency>
-      -->
     </dependencies>
   </dependencyManagement>
 
   <properties>
-      <!--
+    <!--
     <spring-version>2.5.6.SEC01</spring-version>
     <jersey-version>1.1.5</jersey-version>
     <constretto-version>1.0</constretto-version>
@@ -154,15 +71,15 @@
         <artifactId>maven-jetty-plugin</artifactId>
         <version>${version.jetty}</version>
       </plugin>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <configuration>
-                <encoding>UTF-8</encoding>
-                <source>1.5</source>
-                <target>1.5</target>
-            </configuration>
-        </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <encoding>UTF-8</encoding>
+          <source>1.5</source>
+          <target>1.5</target>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
 
@@ -170,19 +87,5 @@
     <module>cibus-web</module>
     <module>cibus-cms-web</module>
   </modules>
-
-  <profiles>
-    <profile>
-      <id>solaris</id>
-      <activation>
-        <os>
-          <name>SunOS</name>
-        </os>
-      </activation>
-      <modules>
-        <module>cibus-pkg</module>
-      </modules>
-    </profile>
-  </profiles>
 
 </project>
